@@ -1,27 +1,9 @@
 const http = require('http');
-const fs = require('fs');
+const routes = require('./routes');
 
-const server = http.createServer((req,res) => {
-    const url = req.url;
-    const method = req.method;
-    if(url === '/'){
-    res.write('<html>');
-    res.write('<head><title>Enter Message</title></header>');
-    res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
-    res.write('</html>');
-    return res.end();
-    }
-    if(url==='/message' && method === 'POST'){
-        fs.writeFileSync('message.txt','DUMMY');
-        res.statusCode = 302;
-        res.setHeader('Location','/');
-    }
-    res.setHeader('Content-Type','text/html');
-    res.write('<html>');
-    res.write('<head><title>My First Page</title></header>');
-    res.write('<body><h1>Hello from my Node.js Server ! </h1></body>');
-    res.write('</html>');
-    res.end();
-});
-
+console.log(routes.text)
+// node.js 에서는 함수 안에 함수를 넣으면 안에 넣은 함수를 나중에 실행함 = 비동기식
+const server = http.createServer(routes.handler);
 server.listen(3000);
+
+// 코드는 작성 순서대로 실행되는게 아님 !
