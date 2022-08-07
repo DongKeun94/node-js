@@ -1,0 +1,24 @@
+{
+  "name": "kuhn",
+  "version": "1.0.0",
+  "description": "first node.js study",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DongKeun94/node-js.git"
+  },
+  "author": "kuhn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DongKeun94/node-js/issues"
+  },
+  "homepage": "https://github.com/DongKeun94/node-js#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
